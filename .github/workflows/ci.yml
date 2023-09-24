@@ -1,6 +1,6 @@
 name: GitHub Actions Demo
 
-on: 
+on:
     push :
       branches :
         - main
@@ -9,7 +9,7 @@ on:
         - opened
       branches :
         - '*feature'
-   
+
 
 
 jobs:
