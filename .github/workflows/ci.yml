@@ -20,9 +20,10 @@ jobs:
     steps:
       - run: echo  "Vars =  ${{ vars.COMPANY_NAME }}"
       - run: echo  "env = ${{ env.COMPANY_NAME }}"
-      - run: echo "My host is $MY_HOST"
-      - run: echo "Hello  ${{ github.actor }} "
-      - run: echo "Full Name $FULLNAME"
+      - run: echo  ${{secrets.MYSQL_PASSWORD}}
+      - run: echo  "My host is $MY_HOST"
+      - run: echo  "Hello  ${{ github.actor }} "
+      - run: echo  "Full Name $FULLNAME"
 
   test-job:
     runs-on: ubuntu-latest
