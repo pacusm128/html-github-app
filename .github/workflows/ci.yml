@@ -9,15 +9,20 @@ on:
       - main
 
 env:
-        MY_HOST : '127.0.0.1'
-
+  MY_HOST: "127.0.0.1"
+  COMPANY_NAME: ${{ vars.COMPANY_NAME}}
 
 jobs:
   build-job:
     runs-on: ubuntu-latest
+    env:
+      FULLNAME: "D.Monkey"
     steps:
+      - run: echo  "Vars =  ${{ vars.COMPANY_NAME }}"
+      - run: echo  "env = ${{ env.COMPANY_NAME }}"
       - run: echo "My host is $MY_HOST"
       - run: echo "Hello  ${{ github.actor }} "
+      - run: echo "Full Name $FULLNAME"
 
   test-job:
     runs-on: ubuntu-latest
